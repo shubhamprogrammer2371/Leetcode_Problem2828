@@ -1,0 +1,23 @@
+bool isAcronym(char ** words, int wordsSize, char * s){
+    if(wordsSize != strlen(s))
+        return 0;
+    for(int i = 0 ; i < wordsSize  ; i++)
+        if(words[i][0] != s[i])
+            return 0;
+    return 1;
+}
+
+
+-----------------------------------------------------------------------
+
+
+bool isAcronym(char ** words, int wordsSize, char * s){
+    for(int i = 0 ; i < wordsSize ; i++)
+    {
+        if(!*s)
+            return false;
+        if(words[i][0] == *s)
+            *s++;
+    }
+    return !*s;
+}
